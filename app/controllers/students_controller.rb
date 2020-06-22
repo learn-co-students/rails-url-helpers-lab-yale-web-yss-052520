@@ -8,6 +8,10 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def activate
+    set_student.update(active: !@studnet.active)
+    redirect_to student_path(set_student)
+
   private
 
     def set_student
